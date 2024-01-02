@@ -1,0 +1,17 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/navbar.ejs') %>
+    <main>
+        <h1>Add Product</h1>
+        <form action="/admin/add-product" method="POST">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+            <label for="imageUrl">Product Image</label>
+            <input type="text" name="imageUrl" id="imageUrl">
+            <label for="price">Price</label>
+            <input type="number" name="price" id="price">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <button type="submit">Add Product</button>
+        </form>
+    </main>
+<%- include('partials/end.ejs') %>
