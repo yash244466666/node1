@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const adminData = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const notFoundRoutes = require('./routes/404'); 
 // const rootDir = require('./util/path');
@@ -15,10 +15,12 @@ app.set('views', 'views');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'public')));
 
-app.use('/admin',adminData.routes);
+app.use('/admin',adminRoutes);
 
 app.use(shopRoutes);
 
 app.use(notFoundRoutes);
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
