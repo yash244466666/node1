@@ -3,12 +3,13 @@
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
-    res.render('add-product', {
+    res.render('admin/add-product', {
         docTitle: 'Add Products', 
         path: '/admin/add-product',
         formCSS: true,
         productCSS: true,
-        activeAddProduct: true
+        activeAddProduct: true,
+        currentRoute: '/admin/add-product'
     });
 };
 
@@ -29,13 +30,14 @@ exports.getProducts =  (req, res, next) => {
     // const products = adminData.products;
     // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
     Product.fetchAll((products) => {
-        res.render('shop', {
+        res.render('shop/product-list', {
             prods: products,
             docTitle: "Shop",
             path: '/',
             hasProducts: products.length > 0,
             activeShop: true,
-            productCSS: true
+            productCSS: true,
+            currentRoute: '/'
         });
     });
 };
