@@ -3,10 +3,6 @@ const Product = require('../models/product');
 exports.getAddProduct = (req, res, next) => {
     res.render('admin/add-product', {
         docTitle: 'Add Products', 
-        path: '/admin/add-product',
-        formCSS: true,
-        productCSS: true,
-        activeAddProduct: true,
         currentRoute: '/admin/add-product'
     });
 };
@@ -22,10 +18,6 @@ exports.getProducts =  (req, res, next) => {
         res.render('shop/product-list', {
             prods: products,
             docTitle: "Shop",
-            path: '/',
-            hasProducts: products.length > 0,
-            activeShop: true,
-            productCSS: true,
             currentRoute: '/'
         });
     });
