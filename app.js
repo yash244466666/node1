@@ -5,7 +5,7 @@ const path = require('path');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const notFoundRoutes = require('./routes/404'); 
-// const rootDir = require('./util/path');
+
 
 const app = express();
 

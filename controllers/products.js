@@ -1,5 +1,3 @@
-// const products = [];
-
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
@@ -14,21 +12,12 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-    // products.push({
-    //     title: req.body.title,
-    //     imageUrl: req.body.imageUrl,
-    //     price: req.body.price,
-    //     description: req.body.description
-    // })
     const product = new Product(req.body.title);
     product.save();
     res.redirect('/');
 };
 
 exports.getProducts =  (req, res, next) => {
-    // console.log('shop.js', adminData.products);
-    // const products = adminData.products;
-    // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
     Product.fetchAll((products) => {
         res.render('shop/product-list', {
             prods: products,

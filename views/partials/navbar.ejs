@@ -13,7 +13,13 @@
                         <a class="nav-link <%= (currentRoute === '/admin/add-product') ? 'active' : '' %>" href="/admin/add-product">Add Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <%= (currentRoute === '/') ? 'active' : '' %>" href="/">Products</a>
+                        <a class="nav-link <%= (currentRoute === '/products') ? 'active' : '' %>" href="/products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= (currentRoute === '/cart') ? 'active' : '' %>" href="/cart">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= (currentRoute === '/admin/products') ? 'active' : '' %>" href="/admin/products">Admin Products</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search" style="margin-left: auto;">
