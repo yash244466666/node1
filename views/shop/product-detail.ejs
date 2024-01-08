@@ -1,0 +1,16 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+<div class="card" style="width: 30%; margin: 1rem auto;">
+    <div class="card-header">
+      <%= product.title %>
+    </div>
+    <div class="card-body">
+        <img class="card-img-top" src="<%= product.imageUrl %>" alt="<%= product.title %>">
+        <h5 class="card-title"><%= product.price %></h5>
+        <p class="card-text"><%= product.description %></p>
+        <form action="/cart" method="POST">
+          <button href="#" class="btn btn-primary" type="submit">Add to Cart</button>
+        </form>
+    </div>
+  </div>
+<%- include('../partials/end.ejs') %>
