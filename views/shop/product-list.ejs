@@ -11,9 +11,12 @@
                                 <h5 class="card-title"><%= prod.title %></h5>
                                 <h6 class="card-title">$<%= prod.price %></h6>
                                 <p class="card-text"><%= prod.description %></p>
-                                <form action="/add-to-cart" method="POST">
-                                    <button class="btn btn-primary">Add to Cart</button>
-                                </form>
+                                <div class="list-inline">
+                                    <a class="btn btn-secondary list-inline-item" href="/products/<%= prod.id %>">Details</a>
+                                    <form class="list-inline-item" action="/add-to-cart" method="POST">
+                                        <button class="btn btn-primary">Add to Cart</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
