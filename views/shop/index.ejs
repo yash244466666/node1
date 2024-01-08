@@ -1,19 +1,20 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/navbar.ejs') %>
 <main class="p-3">
-    <% if (prods.length > 0) { %>
+    <% if (products.length > 0) { %>
         <div class="row">
-            <% prods.forEach(function(prod) { %>
+            <% products.forEach(function(product) { %>
                 <div class="col-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="<%= prod.imageUrl %>" alt="<%= prod.title %>">
+                        <img class="card-img-top" src="<%= product.imageUrl %>" alt="<%= product.title %>">
                         <div class="card-body">
-                            <h5 class="card-title"><%= prod.title %></h5>
-                            <h6 class="card-title">$<%= prod.price %></h6>
-                            <p class="card-text"><%= prod.description %></p>
-                            <form action="/add-to-cart" method="POST">
-                                <button class="btn btn-primary">Add to Cart</button>
-                            </form>
+                            <h5 class="card-title"><%= product.title %></h5>
+                            <h6 class="card-title">$<%= product.price %></h6>
+                            <p class="card-text"><%= product.description %></p>
+                            <div class="list-inline">
+                                <a class="btn btn-secondary list-inline-item" href="/products/<%= product.id %>">Details</a>
+                                <%- include('../partials/add-to-cart.ejs', { product: product }) %>
+                            </div>
                         </div>
                     </div>
                 </div>
