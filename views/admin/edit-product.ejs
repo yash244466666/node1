@@ -11,6 +11,9 @@
             <input type="text" name="price" id="price" class="form-control" step="0.01" value="<% if (editing) { %> <%=product.price %> <% } %>" >
             <label for="description" class="form-label">Description</label>
             <textarea a name="description" id="description" cols="10" rows="5" class="form-control"><% if (editing) { %> <%=product.description %> <% } %> </textarea>
+            <% if (editing) { %>
+                <input type="hidden" name="productId" value="<%=product.id %>">
+            <% } %>
             <button type="submit"  class="btn btn-primary mt-1"> <% if (editing) { %> Update Product <% } else { %> Add Product <% } %></button>
         </form>
     </main>
