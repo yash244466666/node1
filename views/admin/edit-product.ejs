@@ -1,4 +1,17 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/navbar.ejs') %>
-
+    <main>
+        <h1 class="p-3">Add Product</h1>
+        <form action="/admin/add-product" method="POST" class="p-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" id="title" class="form-control">
+            <label for="imageUrl" class="form-label">Product Image</label>
+            <input type="text" name="imageUrl" id="imageUrl" class="form-control">
+            <label for="price" class="form-label" >Price</label>
+            <input type="number" name="price" id="price" class="form-control" step="0.01">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" id="description" cols="10" rows="5" class="form-control"></textarea>
+            <button type="submit"  class="btn btn-primary mt-1">Add Product</button>
+        </form>
+    </main>
 <%- include('../partials/end.ejs') %>
