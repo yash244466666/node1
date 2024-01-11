@@ -4,15 +4,13 @@
         <h1 class="p-3"><% if (editing) { %> Update Product <% } else { %> Add Product <% } %></h1>
         <form action="/admin/<% if (editing) { %>edit-product <% } else {  %>add-product <% } %>" method="POST" class="p-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" name="title" id="title" class="form-control" value="<% if (editing) { %> <%= product.title %> <% } %>">
+            <input type="text" name="title" id="title" class="form-control" value="<% if (editing) { %> <%=product.title %> <% } %>">
             <label for="imageUrl" class="form-label">Product Image</label>
-            <input type="text" name="imageUrl" id="imageUrl" class="form-control" value="<% if (editing) { %> <%= product.imageUrl %> <% } %>">
+            <input type="text" name="imageUrl" id="imageUrl" class="form-control" value="<% if (editing) { %> <%=product.imageUrl %> <% } %>">
             <label for="price" class="form-label" >Price</label>
-            <input type="text" name="price" id="price" class="form-control" step="0.01" value="<% if (editing) { %> <%= product.price %> <% } %>" >
+            <input type="text" name="price" id="price" class="form-control" step="0.01" value="<% if (editing) { %> <%=product.price %> <% } %>" >
             <label for="description" class="form-label">Description</label>
-            <textarea a name="description" id="description" cols="10" rows="5" class="form-control"><% if (editing) { %> <%= product.description %> <% } %> </textarea>
-                <!-- <textarea name="description" id="description" cols="10" rows="5" class="form-control"><%= editing ? product.description || '' : '' %></textarea> -->
-
+            <textarea a name="description" id="description" cols="10" rows="5" class="form-control"><% if (editing) { %> <%=product.description %> <% } %> </textarea>
             <button type="submit"  class="btn btn-primary mt-1"> <% if (editing) { %> Update Product <% } else { %> Add Product <% } %></button>
         </form>
     </main>
