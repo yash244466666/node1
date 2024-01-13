@@ -12,8 +12,9 @@
                                 <h6 class="card-title">$<%= prod.price %></h6>
                                 <p class="card-text"><%= prod.description %></p>
                                 <div class="list-inline">
-                                    <a class="btn btn-primary list-inline-item" href="/admin/edit-product/<%= prod._id %>">Edit</a>
+                                    <a class="btn btn-primary list-inline-item" href="/admin/edit-product/<%=prod.id %>?edit=true">Edit</a>
                                     <form class="list-inline-item" action="/admin/delete-product" method="POST">
+                                        <input type="hidden" name="productId" value="<%= prod.id %>">
                                         <button class="btn btn-danger" type="submit">Delete</button>
                                     </form>
                                 </div>
