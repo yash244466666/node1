@@ -4,9 +4,9 @@
     <% if (products.length > 0) { %>
         <h1>Cart</h1>
         <ul>
-            <% products.forEach(function(product) { %>
+            <% products.forEach(function(p) { %>
                 <li>
-                    <%= product.productData.title %> (<%= product.qty %>)
+                    <%= p.productData.title %> (<%= p.qty %>)
                 </li>
             <% }) %>
         </ul>
