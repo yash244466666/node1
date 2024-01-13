@@ -5,8 +5,14 @@
         <h1>Cart</h1>
         <ul>
             <% products.forEach(function(p) { %>
-                <li>
-                    <%= p.productData.title %> (<%= p.qty %>)
+                <li class="list-inline" >
+                    <p class="list-inline-item">
+                        <%= p.productData.title %> (<%= p.qty %>) - $<%= p.productData.price * p.qty %>
+                    </p>
+                    <form action="/cart-delete-item"  class="list-inline-item" method="POST">
+                        <input type="hidden" name="productId" value="<%= p.productData.id %>">
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
                 </li>
             <% }) %>
         </ul>
