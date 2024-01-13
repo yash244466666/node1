@@ -1,7 +1,17 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/navbar.ejs') %>
 <main>
-    Nothing here yet!
+    <% if (products.length > 0) { %>
+        <h1>Cart</h1>
+        <ul>
+            <% products.forEach(function(product) { %>
+                <li>
+                    <%= product.productData.title %> (<%= product.qty %>)
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <h1>No Products in Cart</h1>
+    <% } %>
 </main>
-
 <%- include('../partials/end.ejs') %>
